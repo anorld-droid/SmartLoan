@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">SmartLoan</string>
+
+    //Headings
+    <string name="heading_one">Quick &amp; Easy Loans</string>
+    <string name="heading_two">Instant Disbursement</string>
+    <string name="heading_three">M-PESA Payment</string>
+    <string name="heading_fourth">Loan Anytime</string>
+
+    //Description
+    <string name="desc_one">Save your Business By getting instant loans</string>
+    <string name="desc_two">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</string>
+    <string name="desc_three">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</string>
+    <string name="desc_fourth">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</string>
+
 </resources>
