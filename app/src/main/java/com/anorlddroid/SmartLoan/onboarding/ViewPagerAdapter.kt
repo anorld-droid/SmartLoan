@@ -1,4 +1,4 @@
-package com.anorlddroid.SmartLoan.OnBoarding
+package com.anorlddroid.SmartLoan.onboarding
 
 import android.content.Context
 import androidx.viewpager.widget.PagerAdapter

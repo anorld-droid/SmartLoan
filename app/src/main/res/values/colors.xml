@@ -8,14 +8,14 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="primaryColor">#7986cb</color>
-    <color name="primaryLightColor">#aab6fe</color>
-    <color name="primaryDarkColor">#49599a</color>
-    <color name="secondaryColor">#37474f</color>
-    <color name="secondaryLightColor">#62727b</color>
-    <color name="secondaryDarkColor">#102027</color>
-    <color name="primaryTextColor">#000000</color>
-    <color name="secondaryTextColor">#ffffff</color>
+<!--    <color name="primaryColor">#7986cb</color>-->
+<!--    <color name="primaryLightColor">#aab6fe</color>-->
+<!--    <color name="primaryDarkColor">#49599a</color>-->
+<!--    <color name="secondaryColor">#37474f</color>-->
+<!--    <color name="secondaryLightColor">#62727b</color>-->
+<!--    <color name="secondaryDarkColor">#102027</color>-->
+<!--    <color name="primaryTextColor">#000000</color>-->
+<!--    <color name="secondaryTextColor">#ffffff</color>-->
 
     //onboarding colors
     <color name="background">#F0F4F3</color>

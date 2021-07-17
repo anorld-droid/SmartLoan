@@ -8,9 +8,9 @@
     <string name="heading_fourth">Loan Anytime</string>
 
     //Description
-    <string name="desc_one">Save your Business By getting instant loans</string>
-    <string name="desc_two">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</string>
-    <string name="desc_three">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</string>
-    <string name="desc_fourth">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</string>
+    <string name="desc_one">Save your Business today by getting instant loans.</string>
+    <string name="desc_two">Get your loan within 15 minutes of loan request and confirmation in your M-Pesa.</string>
+    <string name="desc_three">We use M-Pesa as the only option for disbursing loan, use your safaricom line for registration.\nYour limit increases as you request and pay your loan </string>
+    <string name="desc_fourth">Our services are available 24/7.\nSmartLoan is here for you.</string>
 
 </resources>
