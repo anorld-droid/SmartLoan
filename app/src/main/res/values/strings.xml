@@ -10,7 +10,7 @@
     //Description
     <string name="desc_one">Save your Business today by getting instant loans.</string>
     <string name="desc_two">Get your loan within 15 minutes of loan request and confirmation in your M-Pesa.</string>
-    <string name="desc_three">We use M-Pesa as the only option for disbursing loan, use your safaricom line for registration.\nYour limit increases as you request and pay your loan </string>
+    <string name="desc_three">We use M-Pesa for disbursing loan, use your safaricom line for registration.\nYour limit increases as you request and pay your loan </string>
     <string name="desc_fourth">Our services are available 24/7.\nSmartLoan is here for you.</string>
 
 </resources>
