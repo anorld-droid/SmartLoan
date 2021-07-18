@@ -54,13 +54,15 @@
         android:id="@+id/log_in_button"
         android:layout_width="300dp"
         android:layout_height="60dp"
-        android:layout_centerHorizontal="true"
         android:layout_below="@id/password"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="60dp"
-        android:text="Login"
         android:background="@drawable/rounded_button"
+        android:backgroundTint="@color/colorAccess"
+        android:text="Login"
         android:textColor="#fff"
-        android:textSize="16dp"/>
+        android:textSize="16dp"
+        app:backgroundTint="@color/colorAccess" />
     <TextView
         android:layout_width="150dp"
         android:layout_height="30dp"
