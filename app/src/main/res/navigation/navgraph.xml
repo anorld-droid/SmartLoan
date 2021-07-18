@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navgraph"
+    app:startDestination="@id/signUpFragment">
+
+
+    <fragment
+        android:id="@+id/signUpPaymentFragment"
+        android:name="com.anorlddroid.smartloan.registration.signup.SignUpPaymentFragment"
+        android:label="sign_up_payment_fragment"
+        tools:layout="@layout/sign_up_payment_fragment" />
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.anorlddroid.smartloan.registration.signup.SignUpFragment"
+        android:label="SignUpFragment" >
+        <action
+            android:id="@+id/action_signUpFragment_to_signUpPaymentFragment"
+            app:destination="@id/signUpPaymentFragment" />
+    </fragment>
+</navigation>

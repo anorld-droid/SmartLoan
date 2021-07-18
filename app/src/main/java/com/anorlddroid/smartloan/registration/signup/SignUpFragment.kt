@@ -7,9 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentTransaction
-import androidx.lifecycle.Observer
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import com.anorlddroid.smartloan.R
 import com.anorlddroid.smartloan.databinding.SignUpFragmentBinding
+
 
 class SignUpFragment : Fragment() {
 
@@ -21,32 +23,34 @@ class SignUpFragment : Fragment() {
     private lateinit var viewModel: SignUpViewModel
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding = SignUpFragmentBinding.inflate(inflater)
+        val binding = SignUpFragmentBinding.inflate(inflater, container, false)
         viewModel = ViewModelProvider(this).get(SignUpViewModel::class.java)
         binding.viewModel = viewModel
 
-        viewModel.navigateToSignUpPaymentFragment.observe(viewLifecycleOwner,
-            Observer<Boolean> { shouldNavigate ->
-                if (shouldNavigate == true) {
-                    val fragmentTransaction : FragmentTransaction? =
-                        activity?.supportFragmentManager?.beginTransaction()
-                    fragmentTransaction?.replace(R.id.fragment_container_view, SignUpPaymentFragment())
-                    fragmentTransaction?.addToBackStack(null)
-                    fragmentTransaction?.commit()
-                    viewModel.onNavigatedToSignUpPaymentFragment()
-                }
-            })
-        return inflater.inflate(R.layout.sign_up_fragment, container, false)
+        binding.createAccount.setOnClickListener {
+
+            val navController = activity?.let { it1 ->
+                Navigation.findNavController(it1, R.id.fragment_container_view) }
+            navController?.navigate(R.id.action_signUpFragment_to_signUpPaymentFragment)
+            viewModel.onNavigatedToSignUpPaymentFragment()
+        }
+        return binding.root
+
 
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(SignUpViewModel::class.java)
-        // TODO: Use the ViewModel
+
+    fun loadFragment(fragment : Fragment){
+        val fragmentTransaction : FragmentTransaction? =
+            activity?.supportFragmentManager?.beginTransaction()
+        fragmentTransaction?.replace(R.id.fragment_container_view, fragment )
+        fragmentTransaction?.addToBackStack(null)
+        fragmentTransaction?.commit()
     }
+
 
 }
