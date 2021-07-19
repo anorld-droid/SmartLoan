@@ -17,6 +17,8 @@
         android:label="SignUpFragment" >
         <action
             android:id="@+id/action_signUpFragment_to_signUpPaymentFragment"
-            app:destination="@id/signUpPaymentFragment" />
+            app:destination="@id/signUpPaymentFragment"
+            app:popUpTo="@id/signUpFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 </navigation>

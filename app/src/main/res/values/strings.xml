@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">SmartLoan</string>
+    //bottom navigation
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 
     //Headings
     <string name="heading_one">Quick &amp; Easy Loans</string>

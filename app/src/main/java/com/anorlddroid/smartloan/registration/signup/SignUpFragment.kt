@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentTransaction
 import androidx.navigation.Navigation
-import androidx.navigation.findNavController
 import com.anorlddroid.smartloan.R
 import com.anorlddroid.smartloan.databinding.SignUpFragmentBinding
 
@@ -19,7 +18,7 @@ class SignUpFragment : Fragment() {
         fun newInstance() = SignUpFragment()
     }
 
-//    private lateinit var binding : SignupFragmentBinding
+    private lateinit var binding : SignUpFragmentBinding
     private lateinit var viewModel: SignUpViewModel
 
     override fun onCreateView(
@@ -27,7 +26,8 @@ class SignUpFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding = SignUpFragmentBinding.inflate(inflater, container, false)
+
+        binding =  SignUpFragmentBinding.inflate(inflater, container, false)
         viewModel = ViewModelProvider(this).get(SignUpViewModel::class.java)
         binding.viewModel = viewModel
 

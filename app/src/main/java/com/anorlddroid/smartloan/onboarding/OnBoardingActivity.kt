@@ -12,9 +12,8 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.viewpager.widget.ViewPager
-import com.anorlddroid.smartloan.MainActivity
 import com.anorlddroid.smartloan.R
-import com.anorlddroid.smartloan.registration.SignIn
+import com.anorlddroid.smartloan.registration.MpesaNumberActivity
 
 const val COMPLETED_ONBOARDING_PREF_NAME : String = "Onboarding Completed"
 open class OnBoardingActivity : AppCompatActivity() {
@@ -42,13 +41,13 @@ open class OnBoardingActivity : AppCompatActivity() {
                     it1 -> mSLideViewPager!!.setCurrentItem(it1, true)
             }
             else {
-                val i  = Intent(this@OnBoardingActivity, SignIn::class.java)
+                val i  = Intent(this@OnBoardingActivity, MpesaNumberActivity::class.java)
                 startActivity(i)
                 finish()
             }
         }
         skipbtn?.setOnClickListener {
-            val i = Intent(this@OnBoardingActivity, SignIn::class.java)
+            val i = Intent(this@OnBoardingActivity, MpesaNumberActivity::class.java)
             startActivity(i)
             finish()
         }

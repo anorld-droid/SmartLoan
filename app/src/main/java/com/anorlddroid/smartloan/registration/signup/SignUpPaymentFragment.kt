@@ -23,10 +23,6 @@ class SignUpPaymentFragment : Fragment() {
         return inflater.inflate(R.layout.sign_up_payment_fragment, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(SignUpPaymentViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
+
 
 }

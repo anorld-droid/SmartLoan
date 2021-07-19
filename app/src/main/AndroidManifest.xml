@@ -9,10 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SmartLoan">
-        <activity android:name="com.anorlddroid.smartloan.registration.signup.SignUp"/>
-        <activity android:name="com.anorlddroid.smartloan.registration.SignIn" />
-        <activity android:name="com.anorlddroid.smartloan.onboarding.OnBoardingActivity" />
-        <activity android:name="com.anorlddroid.smartloan.MainActivity">
+        <activity
+            android:name=".registration.MpesaNumberActivity"
+            android:theme="@style/Theme.SmartLoan.NoActionBar"/>
+        <activity android:name=".registration.signup.SignUpActivity"
+            android:theme="@style/Theme.SmartLoan.NoActionBar"
+            />
+        <activity android:name=".onboarding.OnBoardingActivity"
+            android:theme="@style/Theme.SmartLoan.NoActionBar"/>
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/Theme.SmartLoan"/>
+        <activity android:name=".registration.SignInActivity"
+            android:theme="@style/Theme.SmartLoan.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
