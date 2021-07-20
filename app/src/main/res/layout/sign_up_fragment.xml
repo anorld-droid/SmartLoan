@@ -142,7 +142,7 @@
             app:layout_constraintTop_toBottomOf="@+id/first_name" />
 
         <EditText
-            android:id="@+id/surname"
+            android:id="@+id/middle_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -150,7 +150,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
-            android:hint="  Surname"
+            android:hint="  Middle Name(optional)"
             android:textSize="16sp"
             android:paddingLeft="5dp"
             android:paddingBottom="10dp"
@@ -183,7 +183,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.321"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/surname" />
+            app:layout_constraintTop_toBottomOf="@+id/middle_name" />
 
         <EditText
             android:id="@+id/national_id"
@@ -278,44 +278,25 @@
             app:layout_constraintTop_toBottomOf="@+id/password"
             android:drawableStart="@drawable/ic_action_dark_pass" />
 
-        <CheckBox
-            android:id="@+id/terms_and_condition"
-            android:layout_width="241dp"
-            android:layout_height="51dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="1dp"
-            android:layout_marginRight="10dp"
-            android:scaleX="1.4"
-            android:scaleY="1.4"
-            android:text="Terms and conditions"
-            android:textColor="@color/purple_500"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.321"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/confirm_password" />
 
-
-        <Button
-            android:id="@+id/create_account"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="2dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="1dp"
-            android:paddingTop="15dp"
-            android:paddingBottom="15dp"
-            android:backgroundTint="@color/colorAccess"
-            android:text="Create Account"
-            android:textColor="#fff"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.321"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/terms_and_condition" />
- </androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/create_account"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="1dp"
+        android:backgroundTint="@color/colorAccess"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:text="Create Account"
+        android:textColor="#fff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/confirm_password"
+        app:layout_constraintVertical_bias="0.212" />
+</androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

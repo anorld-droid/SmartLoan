@@ -16,5 +16,8 @@
     <string name="desc_two">Get your loan within 15 minutes of loan request and confirmation in your M-Pesa.</string>
     <string name="desc_three">We use M-Pesa for disbursing loan, use your safaricom line for registration.\nYour limit increases as you request and pay your loan </string>
     <string name="desc_fourth">Our services are available 24/7.\nSmartLoan is here for you.</string>
+    //Mpesa activity
+    <string name="terms_and_conditions">I agree to the</string>
+    <string name="terms_of_service"><u>Terms and conditions</u></string>
 
 </resources>

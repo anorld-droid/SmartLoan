@@ -27,7 +27,7 @@ class SignInActivity : AppCompatActivity() {
             }
 
             binding.registerHere.setOnClickListener {
-                val i  = Intent(this@SignInActivity, SignUpActivity::class.java)
+                val i  = Intent(this@SignInActivity, MpesaNumberActivity::class.java)
                 startActivity(i)
                 finish()
             }

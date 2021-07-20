@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
-    tools:context=".registration.MpaseNumber">
+    tools:context=".registration.MpesaNumberActivity">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -33,7 +33,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <EditText
-        android:id="@+id/editTextPhone"
+        android:id="@+id/edit_text_phone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -57,6 +57,7 @@
         android:drawableStart="@drawable/ic_action_number"
         android:paddingStart="4dp" />
 
+
     <Button
         android:id="@+id/continue_button"
         android:layout_width="0dp"
@@ -67,12 +68,44 @@
         android:background="@drawable/rounded_button"
         android:paddingTop="5dp"
         android:paddingBottom="5dp"
-        android:text="CONTINUE"
+        android:text="NEXT"
         app:backgroundTint="@color/colorAccess"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPhone"
-        app:layout_constraintVertical_bias="0.465" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_phone"
+        app:layout_constraintVertical_bias="0.278" />
+
+    <CheckBox
+        android:id="@+id/terms_and_condition"
+        android:layout_width="wrap_content"
+        android:layout_height="51dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="20dp"
+        android:buttonTint="@color/buttontext"
+        android:scaleX="1.4"
+        android:scaleY="1.4"
+        android:text="@string/terms_and_conditions"
+        android:textColor="@color/ic_launcher_background"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.163"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/continue_button" />
+
+    <TextView
+        android:id="@+id/terms_of_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/terms_of_service"
+        android:textSize="14sp"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/buttontext"
+        app:layout_constraintBaseline_toBaselineOf="@+id/terms_and_condition"
+        app:layout_constraintEnd_toEndOf="@+id/continue_button"
+        app:layout_constraintHorizontal_bias="0.225"
+        app:layout_constraintStart_toEndOf="@+id/terms_and_condition" />
 </androidx.constraintlayout.widget.ConstraintLayout>
