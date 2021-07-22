@@ -31,7 +31,7 @@
         android:fadingEdge="horizontal|vertical"
         android:hint="  Phone Number"
         android:inputType="phone"
-        android:textSize="16dp"
+        android:textSize="16sp"
         android:drawableLeft="@drawable/ic_action_phone"/>
 
     <EditText
@@ -45,7 +45,7 @@
         android:hint="  Password"
         android:drawableLeft="@drawable/ic_action_pass"
         android:inputType="textPassword"
-        android:textSize="16dp"
+        android:textSize="16sp"
         android:layout_alignLeft="@id/phone_number"
         android:layout_alignStart="@id/phone_number"/>
 
@@ -61,7 +61,7 @@
         android:backgroundTint="@color/colorAccess"
         android:text="Login"
         android:textColor="#fff"
-        android:textSize="16dp"
+        android:textSize="16sp"
         app:backgroundTint="@color/colorAccess" />
     <TextView
         android:layout_width="150dp"
@@ -80,7 +80,7 @@
         android:text="You don't have an account?"
         android:textAlignment="textEnd"
         android:textColor="#fff"
-        android:textSize="16dp" />
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/register_here"
@@ -96,6 +96,6 @@
         android:text="Register here"
         android:textAlignment="textStart"
         android:textColor="@color/buttontext"
-        android:textSize="16dp" />
+        android:textSize="16sp" />
 </RelativeLayout>
 </layout>

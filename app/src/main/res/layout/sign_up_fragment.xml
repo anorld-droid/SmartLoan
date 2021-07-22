@@ -5,10 +5,11 @@
     <data>
         <variable name="viewModel" type="com.anorlddroid.smartloan.registration.signup.SignUpViewModel"/>
     </data>
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".registration.signup.SignUpFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".registration.signup.SignUpFragment">
 
         <TextView
             android:id="@+id/textView"
@@ -73,28 +74,27 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintStart_toStartOf="@+id/relativeLayout2"
-            app:layout_constraintTop_toBottomOf="@+id/relativeLayout2"
-           >
+            app:layout_constraintTop_toBottomOf="@+id/relativeLayout2">
+
             <RadioButton
                 android:id="@+id/check_box_male"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Male"
-                android:layout_marginTop="15dp"
                 android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginRight="10dp"
-                android:textSize="16sp"
-                 />
+                android:text="Male"
+                android:textSize="16sp" />
 
             <RadioButton
                 android:id="@+id/check_box_female"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Female"
-                android:textSize="16dp"
-                android:layout_marginTop="15dp"
                 android:layout_marginLeft="30dp"
-                android:layout_marginRight="10dp"/>
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"
+                android:text="Female"
+                android:textSize="16dp" />
         </RadioGroup>
 
         <EditText
@@ -106,21 +106,21 @@
             android:layout_marginTop="15dp"
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
-            android:hint="  First Name"
-            android:textSize="16sp"
-            android:paddingLeft="5dp"
-            android:paddingBottom="10dp"
-            android:paddingTop="10dp"
-            android:inputType="textPersonName"
-            android:drawableLeft="@drawable/ic_action_user"
             android:background="@drawable/edit_text_border"
+            android:drawableLeft="@drawable/ic_action_user"
+            android:hint="  First Name"
+            android:inputType="textPersonName"
+            android:paddingLeft="5dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.321"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/gender_radio_group" />
 
         <EditText
-            android:id="@+id/second_name"
+            android:id="@+id/last_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -128,40 +128,40 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
-            android:hint="  Second Name"
-            android:textSize="16sp"
-            android:paddingLeft="5dp"
-            android:paddingBottom="10dp"
-            android:paddingTop="10dp"
-            android:inputType="textPersonName"
-            android:drawableLeft="@drawable/ic_action_user"
             android:background="@drawable/edit_text_border"
+            android:drawableLeft="@drawable/ic_action_user"
+            android:hint="  Last Name"
+            android:inputType="textPersonName"
+            android:paddingLeft="5dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.321"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/first_name" />
 
-        <EditText
-            android:id="@+id/middle_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginRight="10dp"
-            android:hint="  Middle Name(optional)"
-            android:textSize="16sp"
-            android:paddingLeft="5dp"
-            android:paddingBottom="10dp"
-            android:paddingTop="10dp"
-            android:drawableLeft="@drawable/ic_action_user"
-            android:background="@drawable/edit_text_border"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.321"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/second_name" />
+        <!--        <EditText-->
+        <!--            android:id="@+id/middle_name"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginStart="10dp"-->
+        <!--            android:layout_marginLeft="10dp"-->
+        <!--            android:layout_marginTop="10dp"-->
+        <!--            android:layout_marginEnd="10dp"-->
+        <!--            android:layout_marginRight="10dp"-->
+        <!--            android:hint="  Middle Name(optional)"-->
+        <!--            android:textSize="16sp"-->
+        <!--            android:paddingLeft="5dp"-->
+        <!--            android:paddingBottom="10dp"-->
+        <!--            android:paddingTop="10dp"-->
+        <!--            android:drawableLeft="@drawable/ic_action_user"-->
+        <!--            android:background="@drawable/edit_text_border"-->
+        <!--            android:inputType="textPersonName"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintHorizontal_bias="0.321"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/second_name" />-->
 
         <EditText
             android:id="@+id/email"
@@ -172,18 +172,18 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
-            android:hint="  Email address"
-            android:textSize="16sp"
-            android:paddingLeft="5dp"
-            android:paddingBottom="10dp"
-            android:paddingTop="10dp"
-            android:drawableLeft="@drawable/ic_action_email"
             android:background="@drawable/edit_text_border"
+            android:drawableLeft="@drawable/ic_action_email"
+            android:hint="  Email address"
             android:inputType="textEmailAddress"
+            android:paddingLeft="5dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.321"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/middle_name" />
+            app:layout_constraintTop_toBottomOf="@+id/last_name" />
 
         <EditText
             android:id="@+id/national_id"
@@ -194,14 +194,14 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
-            android:hint="  National ID Number"
-            android:textSize="16sp"
-            android:paddingLeft="5dp"
-            android:paddingBottom="10dp"
-            android:paddingTop="10dp"
-            android:drawableLeft="@drawable/ic_action_id"
             android:background="@drawable/edit_text_border"
+            android:drawableLeft="@drawable/ic_action_id"
+            android:hint="  National ID Number"
             android:inputType="number"
+            android:paddingLeft="5dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.321"
             app:layout_constraintStart_toStartOf="parent"
@@ -217,14 +217,14 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
-            android:hint="  Date Of Birth"
-            android:textSize="16sp"
-            android:paddingLeft="5dp"
-            android:paddingBottom="10dp"
-            android:paddingTop="10dp"
-            android:drawableLeft="@drawable/ic_action_calender"
             android:background="@drawable/edit_text_border"
+            android:drawableLeft="@drawable/ic_action_calender"
+            android:hint="  Date Of Birth"
             android:inputType="date"
+            android:paddingLeft="5dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.321"
             app:layout_constraintStart_toStartOf="parent"
@@ -240,20 +240,19 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
-            android:hint="  Password"
-            android:textSize="16sp"
-            android:paddingLeft="5dp"
-            android:paddingBottom="10dp"
-            android:paddingTop="10dp"
-            android:drawableLeft="@drawable/ic_action_dark_pass"
             android:background="@drawable/edit_text_border"
+            android:drawableLeft="@drawable/ic_action_dark_pass"
+            android:hint="  Password"
             android:inputType="textPassword"
+            android:paddingStart="5dp"
+            android:paddingLeft="5dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.321"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/date_of_birth"
-            android:paddingStart="5dp"
-             />
+            app:layout_constraintTop_toBottomOf="@+id/date_of_birth" />
 
         <EditText
             android:id="@+id/confirm_password"
@@ -264,39 +263,40 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
-            android:hint="  Confirm Password"
-            android:textSize="16sp"
-            android:paddingLeft="5dp"
-            android:paddingBottom="10dp"
-            android:paddingTop="10dp"
-            android:drawableLeft="@drawable/ic_action_dark_pass"
             android:background="@drawable/edit_text_border"
+            android:drawableStart="@drawable/ic_action_dark_pass"
+            android:drawableLeft="@drawable/ic_action_dark_pass"
+            android:hint="  Confirm Password"
             android:inputType="textPassword"
+            android:paddingLeft="5dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.321"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/password"
-            android:drawableStart="@drawable/ic_action_dark_pass" />
+            app:layout_constraintTop_toBottomOf="@+id/password" />
 
 
-    <Button
-        android:id="@+id/create_account"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="1dp"
-        android:backgroundTint="@color/colorAccess"
-        android:paddingTop="15dp"
-        android:paddingBottom="15dp"
-        android:text="Create Account"
-        android:textColor="#fff"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/confirm_password"
-        app:layout_constraintVertical_bias="0.212" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/create_account"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="1dp"
+            android:backgroundTint="@color/colorAccess"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:text="Create Account"
+            android:textColor="#fff"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/confirm_password"
+            app:layout_constraintVertical_bias="0.098" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

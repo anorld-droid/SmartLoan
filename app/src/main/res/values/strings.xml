@@ -2,8 +2,11 @@
     <string name="app_name">SmartLoan</string>
     //bottom navigation
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_profile">My Profile</string>
+    //action bar
+    <string name="title_about">About</string>
+    <string name="title_help">help</string>
+
 
     //Headings
     <string name="heading_one">Quick &amp; Easy Loans</string>

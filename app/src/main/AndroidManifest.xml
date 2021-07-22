@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.anorlddroid.smartloan">
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,17 +9,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SmartLoan">
         <activity
-            android:name=".registration.MpesaNumberActivity"
-            android:theme="@style/Theme.SmartLoan.NoActionBar"/>
-        <activity android:name=".registration.signup.SignUpActivity"
-            android:theme="@style/Theme.SmartLoan.NoActionBar"
-            />
-        <activity android:name=".onboarding.OnBoardingActivity"
+            android:name=".mainui.about.AboutActivity"
             android:theme="@style/Theme.SmartLoan.NoActionBar"/>
         <activity
+            android:name=".registration.MpesaNumberActivity"
+            android:theme="@style/Theme.SmartLoan.NoActionBar" />
+        <activity
+            android:name=".registration.signup.SignUpActivity"
+            android:theme="@style/Theme.SmartLoan.NoActionBar" />
+        <activity
+            android:name=".onboarding.OnBoardingActivity"
+            android:theme="@style/Theme.SmartLoan.NoActionBar" />
+        <activity
             android:name=".MainActivity"
-            android:theme="@style/Theme.SmartLoan"/>
-        <activity android:name=".registration.SignInActivity"
+            android:theme="@style/Theme.SmartLoan" />
+        <activity
+            android:name=".registration.SignInActivity"
             android:theme="@style/Theme.SmartLoan.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

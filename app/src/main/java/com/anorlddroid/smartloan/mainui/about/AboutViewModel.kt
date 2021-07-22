@@ -1,11 +1,11 @@
-package com.anorlddroid.smartloan.mainui.notifications
+package com.anorlddroid.smartloan.mainui.about
 
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class NotificationsViewModel : ViewModel() {
+class AboutViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
         value = "This is notifications Fragment"

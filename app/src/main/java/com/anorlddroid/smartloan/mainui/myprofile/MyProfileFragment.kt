@@ -1,4 +1,4 @@
-package com.anorlddroid.smartloan.mainui.notifications
+package com.anorlddroid.smartloan.mainui.myprofile
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,13 +8,13 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.anorlddroid.smartloan.databinding.FragmentNotificationsBinding
+import com.anorlddroid.smartloan.databinding.FragmentMyProfileBinding
 
 
-class NotificationsFragment : Fragment() {
+class MyProfileFragment : Fragment() {
 
-    private lateinit var notificationsViewModel: NotificationsViewModel
-    private var _binding: FragmentNotificationsBinding? = null
+    private lateinit var dashboardViewModel: MyProfileViewModel
+    private var _binding: FragmentMyProfileBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -25,16 +25,13 @@ class NotificationsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        notificationsViewModel =
-            ViewModelProvider(this).get(NotificationsViewModel::class.java)
+        dashboardViewModel =
+            ViewModelProvider(this).get(MyProfileViewModel::class.java)
 
-        _binding = FragmentNotificationsBinding.inflate(inflater, container, false)
+        _binding = FragmentMyProfileBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textNotifications
-        notificationsViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
+
         return root
     }
 
