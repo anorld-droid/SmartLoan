@@ -18,7 +18,7 @@
         app:srcCompat="@drawable/logo" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/mobile_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
@@ -46,13 +46,14 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:drawableLeft="@drawable/ic_action_number"
-        android:hint="  M-Pesa Phone Number"
+        android:hint="  Enter your mobile number"
+        android:maxLength="10"
         android:background="@drawable/rounded_edit_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/mobile_number"
         app:layout_constraintVertical_bias="0.123"
         android:drawableStart="@drawable/ic_action_number"
         android:paddingStart="4dp" />

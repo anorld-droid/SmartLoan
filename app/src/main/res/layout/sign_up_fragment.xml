@@ -84,6 +84,7 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginRight="10dp"
                 android:text="Male"
+                android:checked="true"
                 android:textSize="16sp" />
 
             <RadioButton
@@ -249,6 +250,7 @@
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             android:textSize="16sp"
+            android:maxLength="8"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.321"
             app:layout_constraintStart_toStartOf="parent"
@@ -292,6 +294,7 @@
             android:paddingBottom="20dp"
             android:text="Create Account"
             android:textColor="#fff"
+            android:onClick="@{() -> viewModel.onFabClicked()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.2"

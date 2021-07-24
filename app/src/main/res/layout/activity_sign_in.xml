@@ -28,6 +28,7 @@
         android:layout_marginTop="72dp"
         android:background="@drawable/rounded_edit_text"
         android:ems="10"
+        android:maxLength="10"
         android:fadingEdge="horizontal|vertical"
         android:hint="  Phone Number"
         android:inputType="phone"
