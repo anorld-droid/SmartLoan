@@ -1,24 +1,28 @@
 package com.anorlddroid.smartloan.registration
 
-import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.lifecycle.LiveData
-import com.anorlddroid.smartloan.database.PersonEntity
+import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
+import com.anorlddroid.smartloan.database.UserDatabase
+import com.anorlddroid.smartloan.database.UserEntity
 import com.anorlddroid.smartloan.databinding.ActivityMpesaNumberBinding
 import com.anorlddroid.smartloan.registration.signup.SignUpActivity
-import com.anorlddroid.smartloan.repository.PersonRepository
+import com.anorlddroid.smartloan.registration.signup.SignUpViewModel
 
 class MpesaNumberActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMpesaNumberBinding
-    private  val  personRepository: PersonRepository = PersonRepository(applicationContext)
+    private lateinit var viewModel: SignUpViewModel
+
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMpesaNumberBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        viewModel = ViewModelProvider(this).get(SignUpViewModel::class.java)
         binding.continueButton.setOnClickListener {
             if (validateNumber()){
 
@@ -30,21 +34,30 @@ class MpesaNumberActivity : AppCompatActivity() {
         }
 
     }
-    fun validateNumber() : Boolean{
-        if (binding.editTextPhone.text.toString().isEmpty()){
-            binding.editTextPhone.error = "Phone Number cannot be null"
-            return false
-        }else if (binding.editTextPhone.text.toString().length < 13){
-            binding.editTextPhone.error = "Should be of atleast 13 characters"
-            return false
-        }else {
-            val personEntity : PersonEntity? = null
-            val phoneNumber  = binding.editTextPhone.text.toString().toInt()
-            personEntity?.phoneNumber = phoneNumber
-            if (personEntity != null) {
-                personRepository.insertPhoneNumber(personEntity)
+    private fun validateNumber() : Boolean{
+        when {
+            binding.editTextPhone.text.toString().isEmpty() -> {
+                binding.editTextPhone.error = "Phone Number cannot be null"
+                return false
             }
-            return true
+            binding.editTextPhone.text.toString().length < 10 -> {
+                binding.editTextPhone.error = "Should be of atleast 10 characters"
+                return false
+            }
+            else -> {
+                val userEntity = UserEntity()
+                val phoneNumber  = binding.editTextPhone.text.toString().toInt()
+                userEntity.phoneNumber = phoneNumber
+                val userDatabase : UserDatabase? = UserDatabase.getUserDatabase(applicationContext)
+                Thread {
+                    userDatabase?.userDao()?.registerPhoneNumber(userEntity)
+                }.start()
+                Toast.makeText(
+                    this, "Your  phone number has been successfully created",
+                    Toast.LENGTH_LONG
+                ).show()
+                return true
+            }
         }
 
     }
