@@ -10,7 +10,7 @@ class UserEntity {
     var id: Int? = null
 
     @ColumnInfo(name = "phoneNumber")
-    var phoneNumber: Int? = null
+    var phoneNumber: String? = null
 
     @ColumnInfo(name = "firstName")
     var firstName: String? = null
@@ -23,9 +23,6 @@ class UserEntity {
 
     @ColumnInfo(name = "nationalID")
     var nationalID: Int? = null
-
-    @ColumnInfo(name = "dateOfBirth")
-    var dateOfBirth: Int? = null
 
     @ColumnInfo(name = "password")
     var password: String? = null

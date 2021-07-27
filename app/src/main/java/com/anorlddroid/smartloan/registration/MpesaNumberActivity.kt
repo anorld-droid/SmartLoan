@@ -50,7 +50,7 @@ class MpesaNumberActivity : AppCompatActivity() {
             }
             else -> {
                 val userEntity = UserEntity()
-                val phoneNumber  = binding.editTextPhone.text.toString().toInt()
+                val phoneNumber  = binding.editTextPhone.text.toString()
                 userEntity.phoneNumber = phoneNumber
                 val userDatabase : UserDatabase? = UserDatabase.getUserDatabase(applicationContext)
                 Thread {

@@ -57,13 +57,7 @@ class SignInActivity : AppCompatActivity() {
     private fun loginValidation() : Boolean {
         val userDatabase : UserDatabase? = UserDatabase.getUserDatabase(applicationContext)
         val allInfo = userDatabase?.userDao()?.getLogInInfo()
-        Thread{
-          val alInfo = userDatabase?.userDao()?.getLogInInfo()
-           alInfo?.forEach {
-               Log.i("Fetch records","Id : ${it.id}  ")
-               Log.i("Fetch records","Number: ${it.phoneNumber} Password : ${it.password}  ")
-           }
-        }.start()
+
         when {
             binding.phoneNumber.text.toString().isEmpty() -> {
                 binding.phoneNumber.error = "Phone number cannot be empty"
@@ -81,7 +75,7 @@ class SignInActivity : AppCompatActivity() {
                     for (pass in allInfo) {
                         when {
                             pass.phoneNumber != null -> {
-                               if (binding.phoneNumber.text.toString().toInt() != pass.phoneNumber) {
+                               if (binding.phoneNumber.text.toString() != pass.phoneNumber) {
                                     binding.phoneNumber.error = "Invalid phone number"
                                    return false
                                 }

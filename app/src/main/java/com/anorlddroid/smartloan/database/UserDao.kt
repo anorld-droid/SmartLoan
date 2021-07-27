@@ -1,6 +1,7 @@
 package com.anorlddroid.smartloan.database
 
 import androidx.room.*
+import java.util.ArrayList
 
 @Dao
 interface UserDao {
@@ -9,6 +10,9 @@ interface UserDao {
 
     @Query("SELECT id, phoneNumber, password FROM users")
     fun getLogInInfo() : List<UserEntity>
+
+    @Query("SELECT phoneNumber FROM users")
+    fun getPhoneNumber() : ArrayList<String>
 
     @Query("SELECT * FROM users")
     fun getAllInfo() : List<UserEntity>

@@ -39,7 +39,6 @@ class MyProfileFragment : Fragment() {
                         binding.lastNameEditText.text = SpannableStringBuilder(user.lastName)
                         binding.emailEditText.text = SpannableStringBuilder(user.email)
                         binding.nationalIdEditText.text = SpannableStringBuilder(user.nationalID.toString())
-                        binding.dateOfBirthEditText.text = SpannableStringBuilder(user.dateOfBirth.toString())
                         binding.passwordEditText.text = SpannableStringBuilder(user.password)
                         viewModel.uiUpdated()
                     }
@@ -80,11 +79,7 @@ class MyProfileFragment : Fragment() {
                 return false
 
             }
-            binding.dateOfBirthEditText.text.toString().isEmpty() -> {
-                binding.dateOfBirthEditText.error = "Date of birth cannot be null"
-                return false
 
-            }
             binding.passwordEditText.text.toString().isEmpty() -> {
                 binding.passwordEditText.error = "Password cannot be null"
                 return false
@@ -102,7 +97,6 @@ class MyProfileFragment : Fragment() {
         userEntity.lastName = binding.lastNameEditText.text.toString()
         userEntity.email = binding.emailEditText.text.toString()
         userEntity.nationalID = binding.nationalIdEditText.text.toString().toIntOrNull()
-        userEntity.dateOfBirth = binding.dateOfBirthEditText.text.toString().toIntOrNull()
         userEntity.password = binding.passwordEditText.text.toString()
         return run {
             Thread {
