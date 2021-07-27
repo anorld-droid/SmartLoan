@@ -38,7 +38,7 @@ class SignInActivity : AppCompatActivity() {
         }
         if (validatePayment()) {
             Toast.makeText(
-                this, "Pay your registration fee then try again.",
+                this, "Pay your registration fee then login.",
                 Toast.LENGTH_LONG
             ).show()
             val i = Intent(this@SignInActivity, RegistrationPaymentActivity::class.java)
