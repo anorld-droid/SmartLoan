@@ -73,6 +73,10 @@ class SignInActivity : AppCompatActivity() {
                 binding.password.error = "Password cannot be empty"
                 return false
             }
+            binding.phoneNumber.text.toString().toIntOrNull() == null -> {
+                binding.phoneNumber.error = "Invalid Phone Number"
+                return false
+            }
             allInfo != null -> {
                     for (pass in allInfo) {
                         when {

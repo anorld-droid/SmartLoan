@@ -142,27 +142,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/first_name" />
 
-        <!--        <EditText-->
-        <!--            android:id="@+id/middle_name"-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:layout_marginStart="10dp"-->
-        <!--            android:layout_marginLeft="10dp"-->
-        <!--            android:layout_marginTop="10dp"-->
-        <!--            android:layout_marginEnd="10dp"-->
-        <!--            android:layout_marginRight="10dp"-->
-        <!--            android:hint="  Middle Name(optional)"-->
-        <!--            android:textSize="16sp"-->
-        <!--            android:paddingLeft="5dp"-->
-        <!--            android:paddingBottom="10dp"-->
-        <!--            android:paddingTop="10dp"-->
-        <!--            android:drawableLeft="@drawable/ic_action_user"-->
-        <!--            android:background="@drawable/edit_text_border"-->
-        <!--            android:inputType="textPersonName"-->
-        <!--            app:layout_constraintEnd_toEndOf="parent"-->
-        <!--            app:layout_constraintHorizontal_bias="0.321"-->
-        <!--            app:layout_constraintStart_toStartOf="parent"-->
-        <!--            app:layout_constraintTop_toBottomOf="@+id/second_name" />-->
 
         <EditText
             android:id="@+id/email"

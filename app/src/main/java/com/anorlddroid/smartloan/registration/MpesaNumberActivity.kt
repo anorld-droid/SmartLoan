@@ -37,11 +37,15 @@ class MpesaNumberActivity : AppCompatActivity() {
     private fun validateNumber() : Boolean{
         when {
             binding.editTextPhone.text.toString().isEmpty() -> {
-                binding.editTextPhone.error = "Phone Number cannot be null"
+                binding.editTextPhone.error = "Phone Number cannot be empty"
                 return false
             }
             binding.editTextPhone.text.toString().length < 10 -> {
-                binding.editTextPhone.error = "Should be of atleast 10 characters"
+                binding.editTextPhone.error = "Should be of at least 10 characters"
+                return false
+            }
+            binding.editTextPhone.text.toString().toIntOrNull() == null -> {
+                binding.editTextPhone.error = "Invalid Phone Number"
                 return false
             }
             else -> {
