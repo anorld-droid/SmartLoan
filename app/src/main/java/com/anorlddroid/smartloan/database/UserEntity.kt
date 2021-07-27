@@ -26,4 +26,7 @@ class UserEntity {
 
     @ColumnInfo(name = "password")
     var password: String? = null
+
+    @ColumnInfo(name = "paymentStatus")
+    var paymentStatus: String? = null
 }

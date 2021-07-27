@@ -30,13 +30,22 @@ class SignInActivity : AppCompatActivity() {
             binding = ActivitySignInBinding.inflate(layoutInflater)
             setContentView(binding.root)
             viewModel = ViewModelProvider(this).get(SignUpViewModel::class.java)
-            PreferenceManager.getDefaultSharedPreferences(this).apply {
-                if (!getBoolean(COMPLETED_ONBOARDING_PREF_NAME, false)) {
-                    val i = Intent(this@SignInActivity, OnBoardingActivity::class.java)
-                    startActivity(i)
-                    finish()
-                }
+        PreferenceManager.getDefaultSharedPreferences(this).apply {
+            if (!getBoolean(COMPLETED_ONBOARDING_PREF_NAME, false)) {
+                val i = Intent(this@SignInActivity, OnBoardingActivity::class.java)
+                startActivity(i)
+                finish()
             }
+        }
+        if (!validatePayment()){
+            Toast.makeText(
+                this, "Pay your registration fee then try again.",
+                Toast.LENGTH_LONG
+            ).show()
+            val i = Intent(this@SignInActivity, RegistrationPaymentActivity::class.java)
+            startActivity(i)
+            finish()
+        }
 
             binding.registerHere.setOnClickListener {
                 val i  = Intent(this@SignInActivity, MpesaNumberActivity::class.java)
@@ -52,6 +61,21 @@ class SignInActivity : AppCompatActivity() {
                 }
             }
 
+    }
+
+    private fun validatePayment() : Boolean{
+        val userDatabase : UserDatabase? = UserDatabase.getUserDatabase(applicationContext)
+        val paymentStatus = userDatabase?.userDao()?.getPaymentStatus()
+        if (paymentStatus != null) {
+            for (status in paymentStatus){
+                if (status.paymentStatus != null){
+                    return true
+                }
+            }
+            return true
+        }else{
+            return false
+        }
     }
 
     private fun loginValidation() : Boolean {
@@ -103,4 +127,5 @@ class SignInActivity : AppCompatActivity() {
         ).show()
         return false
     }
+
 }

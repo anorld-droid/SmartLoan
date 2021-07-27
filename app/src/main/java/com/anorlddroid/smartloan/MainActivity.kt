@@ -4,23 +4,33 @@ import android.content.Intent
 import android.graphics.drawable.ColorDrawable
 import android.os.Build
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
+import com.anorlddroid.smartloan.database.UserDatabase
 import com.anorlddroid.smartloan.databinding.ActivityMainBinding
 import com.anorlddroid.smartloan.mainui.about.AboutActivity
+import com.anorlddroid.smartloan.onboarding.COMPLETED_ONBOARDING_PREF_NAME
+import com.anorlddroid.smartloan.onboarding.OnBoardingActivity
 import com.anorlddroid.smartloan.registration.MpesaNumberActivity
+import com.anorlddroid.smartloan.registration.RegistrationPaymentActivity
+import com.anorlddroid.smartloan.registration.SignInActivity
+import com.anorlddroid.smartloan.registration.signup.SignUpViewModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -59,4 +69,5 @@ class MainActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
+
 } 

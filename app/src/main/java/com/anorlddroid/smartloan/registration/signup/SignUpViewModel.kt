@@ -17,24 +17,7 @@ class SignUpViewModel(application: Application) : AndroidViewModel(application) 
         userDatabase = UserDatabase.getUserDatabase(context)!!
     }
 
-
-
     fun registerUser(userEntity: UserEntity): Unit? {
         return userDatabase.userDao()?.registerUser(userEntity)
     }
-
-
-    private val _navigateToSignUpPaymentFragment = MutableLiveData<Boolean>()
-    val navigateToSignUpPaymentFragment: LiveData<Boolean>
-        get() = _navigateToSignUpPaymentFragment
-
-    fun onCreateAccountClicked() {
-            _navigateToSignUpPaymentFragment.value = true
-
-    }
-
-    fun onNavigatedToSignUpPaymentFragment() {
-        _navigateToSignUpPaymentFragment.value = false
-    }
-
 }

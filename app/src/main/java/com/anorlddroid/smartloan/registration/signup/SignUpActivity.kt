@@ -32,8 +32,6 @@ class SignUpActivity : AppCompatActivity() {
 
 
     }
-
-
     private fun saveToDatabase(): Boolean {
         when {
             binding.firstName.text.toString().isEmpty() -> {

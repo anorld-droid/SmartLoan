@@ -13,7 +13,7 @@ import com.anorlddroid.smartloan.registration.signup.SignUpViewModel
 
 class MpesaNumberActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMpesaNumberBinding
-    private lateinit var viewModel: SignUpViewModel
+//    private lateinit var viewModel: SignUpViewModel
 
 
 
@@ -22,7 +22,7 @@ class MpesaNumberActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMpesaNumberBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        viewModel = ViewModelProvider(this).get(SignUpViewModel::class.java)
+//        viewModel = ViewModelProvider(this).get(SignUpViewModel::class.java)
         binding.continueButton.setOnClickListener {
             if (validateNumber()){
 
@@ -48,6 +48,13 @@ class MpesaNumberActivity : AppCompatActivity() {
                 binding.editTextPhone.error = "Invalid Phone Number"
                 return false
             }
+            !binding.termsAndCondition.isChecked -> {
+                Toast.makeText(
+                    this, "Read the terms and conditions then check the box.",
+                    Toast.LENGTH_LONG
+                ).show()
+                return false
+            }
             else -> {
                 val userEntity = UserEntity()
                 val phoneNumber  = binding.editTextPhone.text.toString()
@@ -56,10 +63,7 @@ class MpesaNumberActivity : AppCompatActivity() {
                 Thread {
                     userDatabase?.userDao()?.registerPhoneNumber(userEntity)
                 }.start()
-                Toast.makeText(
-                    this, "Your  phone number has been successfully created",
-                    Toast.LENGTH_LONG
-                ).show()
+
                 return true
             }
         }
