@@ -36,15 +36,7 @@ class SignInActivity : AppCompatActivity() {
                 finish()
             }
         }
-        if (validatePayment()) {
-            Toast.makeText(
-                this, "Pay your registration fee then login.",
-                Toast.LENGTH_LONG
-            ).show()
-            val i = Intent(this@SignInActivity, RegistrationPaymentActivity::class.java)
-            startActivity(i)
-            finish()
-        }
+
 
         binding.registerHere.setOnClickListener {
             val i = Intent(this@SignInActivity, MpesaNumberActivity::class.java)
@@ -54,9 +46,24 @@ class SignInActivity : AppCompatActivity() {
 
         binding.logInButton.setOnClickListener {
             if (loginValidation()) {
-                val i = Intent(this@SignInActivity, MainActivity::class.java)
-                startActivity(i)
-                finish()
+                if (validatePayment()) {
+                    Toast.makeText(
+                        this, "Pay your registration fee then login.",
+                        Toast.LENGTH_LONG
+                    ).show()
+                    val i = Intent(this@SignInActivity, RegistrationPaymentActivity::class.java)
+                    startActivity(i)
+                    finish()
+                }else{
+                    Toast.makeText(
+                        this, "Log in successful",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    val i = Intent(this@SignInActivity, MainActivity::class.java)
+                    startActivity(i)
+                    finish()
+                }
+
             }
 
         }
@@ -105,10 +112,7 @@ private fun loginValidation(): Boolean {
                             binding.password.error = "Invalid password"
                             false
                         } else {
-                            Toast.makeText(
-                                this, "Log in successful",
-                                Toast.LENGTH_SHORT
-                            ).show()
+
                             true
                         }
                     }
