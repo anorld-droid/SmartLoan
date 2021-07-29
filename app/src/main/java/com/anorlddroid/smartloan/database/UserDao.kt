@@ -20,6 +20,9 @@ interface UserDao {
     @Query("SELECT paymentStatus FROM users")
     fun getPaymentStatus(): List<UserEntity>
 
+    @Query("UPDATE users SET paymentStatus = :value")
+    fun updatePaymentStatus(value : String )
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun paymentStatus(paymentStatus: UserEntity)
 

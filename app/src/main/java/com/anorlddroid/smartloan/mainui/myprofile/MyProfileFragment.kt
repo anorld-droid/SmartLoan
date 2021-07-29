@@ -96,7 +96,7 @@ class MyProfileFragment : Fragment() {
         userEntity.firstName = binding.firstNameEditText.text.toString()
         userEntity.lastName = binding.lastNameEditText.text.toString()
         userEntity.email = binding.emailEditText.text.toString()
-        userEntity.nationalID = binding.nationalIdEditText.text.toString().toIntOrNull()
+        userEntity.nationalID = binding.nationalIdEditText.text.toString().toLongOrNull()
         userEntity.password = binding.passwordEditText.text.toString()
         return run {
             Thread {

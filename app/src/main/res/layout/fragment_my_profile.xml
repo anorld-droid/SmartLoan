@@ -157,6 +157,7 @@
             android:layout_marginRight="10dp"
             android:inputType="number"
             android:paddingStart="5dp"
+            android:maxLength="10"
             android:paddingLeft="5dp"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"

@@ -4,13 +4,14 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.ViewModelProvider
 import com.anorlddroid.smartloan.registration.RegistrationPaymentActivity
 import com.anorlddroid.smartloan.database.UserEntity
 import com.anorlddroid.smartloan.databinding.ActivitySignUpBinding
 import timber.log.Timber
 
-class SignUpActivity : AppCompatActivity() {
+open class SignUpActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySignUpBinding
     private lateinit var viewModel: SignUpViewModel
@@ -24,9 +25,9 @@ class SignUpActivity : AppCompatActivity() {
 
         binding.createAccount.setOnClickListener {
             if (saveToDatabase()) {
-                val i  = Intent(this, RegistrationPaymentActivity::class.java)
-                startActivity(i)
-                finish()
+                val title = "Congratulations!"
+                val message = "Pay ksh.250 to get your loan"
+               dialogBox(title, message)
             }
         }
 
@@ -78,21 +79,31 @@ class SignUpActivity : AppCompatActivity() {
         userEntity.firstName = binding.firstName.text.toString()
         userEntity.lastName = binding.lastName.text.toString()
         userEntity.email = binding.email.text.toString()
-        userEntity.nationalID = binding.nationalId.text.toString().toInt()
+        userEntity.nationalID = binding.nationalId.text.toString().toLongOrNull()
         userEntity.password = binding.password.text.toString()
+        userEntity.paymentStatus = "Inactive"
         return run {
             Thread {
                 viewModel.registerUser(userEntity)
             }.start()
-            val name = binding.firstName.text.toString()
-            Toast.makeText(
-                this, "$name, your  account has been successfully created",
-                Toast.LENGTH_LONG
-            ).show()
+
             Timber.d("Inserted successfully")
             true
         }
 
+    }
+    private fun dialogBox(title: String, message: String) {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle(title)
+        builder.setMessage(message)
+        builder.setPositiveButton("Continue"){ _, _ ->
+            val i  = Intent(this, RegistrationPaymentActivity::class.java)
+            startActivity(i)
+            finish()
+        }
+        val alertDialog : AlertDialog = builder.create()
+        alertDialog.setCancelable(false)
+        alertDialog.show()
     }
 
 }

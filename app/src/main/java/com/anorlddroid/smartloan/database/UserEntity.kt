@@ -22,7 +22,7 @@ class UserEntity {
     var email: String? = null
 
     @ColumnInfo(name = "nationalID")
-    var nationalID: Int? = null
+    var nationalID: Long? = null
 
     @ColumnInfo(name = "password")
     var password: String? = null
