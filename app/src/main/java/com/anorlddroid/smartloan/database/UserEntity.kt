@@ -4,7 +4,7 @@ import androidx.room.PrimaryKey
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 
-@Entity(tableName = "users")
+@Entity(tableName = "personal_information")
 class UserEntity {
     @PrimaryKey(autoGenerate = true)
     var id: Int? = null
@@ -28,5 +28,5 @@ class UserEntity {
     var password: String? = null
 
     @ColumnInfo(name = "paymentStatus")
-    var paymentStatus: String? = null
+    var paymentStatus: Int? = null
 }

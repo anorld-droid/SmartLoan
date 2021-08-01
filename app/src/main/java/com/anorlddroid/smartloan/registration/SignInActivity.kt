@@ -7,6 +7,7 @@ import android.preference.PreferenceManager
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.core.content.ContextCompat.startActivity
 import androidx.lifecycle.ViewModelProvider
 import com.anorlddroid.smartloan.MainActivity
 import com.anorlddroid.smartloan.database.UserDatabase
@@ -18,6 +19,7 @@ import com.anorlddroid.smartloan.registration.signup.SignUpActivity
 import com.anorlddroid.smartloan.registration.signup.SignUpViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import timber.log.Timber
 
 class SignInActivity : AppCompatActivity() {
 
@@ -38,8 +40,6 @@ class SignInActivity : AppCompatActivity() {
                 finish()
             }
         }
-
-
         binding.registerHere.setOnClickListener {
             val i = Intent(this@SignInActivity, MpesaNumberActivity::class.java)
             startActivity(i)
@@ -59,22 +59,6 @@ class SignInActivity : AppCompatActivity() {
 
         }
     }
-    private fun dialogBox(title: String, message: String) {
-        val builder = AlertDialog.Builder(this)
-        builder.setTitle(title)
-        builder.setMessage(message)
-        builder.setPositiveButton("Continue"){ _, _ ->
-            val i = Intent(this@SignInActivity, RegistrationPaymentActivity::class.java)
-            startActivity(i)
-            finish()
-
-        }
-        val alertDialog : AlertDialog = builder.create()
-        alertDialog.setCancelable(false)
-        alertDialog.show()
-    }
-
-
 
     private fun loginValidation(): Boolean {
         val userDatabase: UserDatabase? = UserDatabase.getUserDatabase(applicationContext)
@@ -96,14 +80,6 @@ class SignInActivity : AppCompatActivity() {
             allInfo != null -> {
                 for (pass in allInfo) {
                     when {
-                        pass.paymentStatus == null ->{
-                            if (pass.paymentStatus == "Inactive"){
-                                val title = "Congratulations!"
-                                val message = "Pay ksh.250 to get your loan"
-                                dialogBox(title, message)
-                                return false
-                            }
-                        }
 
                         pass.phoneNumber != null -> {
                             if (binding.phoneNumber.text.toString() != pass.phoneNumber) {
@@ -122,6 +98,15 @@ class SignInActivity : AppCompatActivity() {
                                 true
                             }
                         }
+//                        pass.paymentStatus != null -> {
+//                            if (pass.paymentStatus == 0){
+//                                val title = "Complete registration...."
+//                                val message = "Pay ksh.250 to proceed with login."
+//                                dialogBox(title, message)
+//                                return false
+//                            }
+//                        }
+
                     }
                 }
             }
@@ -132,5 +117,23 @@ class SignInActivity : AppCompatActivity() {
         ).show()
         return false
     }
+
+    private fun dialogBox(title: String, message: String) {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle(title)
+        builder.setMessage(message)
+        builder.setPositiveButton("Continue"){ _, _ ->
+            val i = Intent(this@SignInActivity, RegistrationPaymentActivity::class.java)
+            startActivity(i)
+            finish()
+
+        }
+        val alertDialog : AlertDialog = builder.create()
+        alertDialog.setCancelable(false)
+        alertDialog.show()
+    }
+
+
+
 
 }

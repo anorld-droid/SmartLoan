@@ -8,20 +8,20 @@ interface UserDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun registerUser(vararg userEntity: UserEntity)
 
-    @Query("SELECT id, phoneNumber, password FROM users")
+    @Query("SELECT id, phoneNumber, password, paymentStatus FROM personal_information")
     fun getLogInInfo() : List<UserEntity>
 
-    @Query("SELECT phoneNumber FROM users")
+    @Query("SELECT phoneNumber FROM personal_information")
     fun getPhoneNumber() : List<UserEntity>
 
-    @Query("SELECT * FROM users")
+    @Query("SELECT * FROM personal_information")
     fun getAllInfo() : List<UserEntity>
 
-    @Query("SELECT paymentStatus FROM users")
+    @Query("SELECT paymentStatus FROM personal_information")
     fun getPaymentStatus(): List<UserEntity>
 
-    @Query("UPDATE users SET paymentStatus = :value")
-    fun updatePaymentStatus(value : String )
+    @Query("UPDATE personal_information SET paymentStatus = :value WHERE id = 2")
+    fun updatePaymentStatus(value : Int )
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun paymentStatus(paymentStatus: UserEntity)

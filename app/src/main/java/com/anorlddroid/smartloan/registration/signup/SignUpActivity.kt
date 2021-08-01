@@ -81,7 +81,7 @@ open class SignUpActivity : AppCompatActivity() {
         userEntity.email = binding.email.text.toString()
         userEntity.nationalID = binding.nationalId.text.toString().toLongOrNull()
         userEntity.password = binding.password.text.toString()
-        userEntity.paymentStatus = "Inactive"
+        userEntity.paymentStatus = 0
         return run {
             Thread {
                 viewModel.registerUser(userEntity)

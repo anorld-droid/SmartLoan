@@ -143,17 +143,11 @@ public class RegistrationPaymentActivity extends AppCompatActivity implements Vi
                 try {
                     if (response.isSuccessful()) {
                         Timber.d("post submitted to API. %s", response.body());
-                        new Thread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    Timber.d("payment status updated.");
-                                    UserEntity userEntity = new UserEntity();
-                                    userEntity.setPaymentStatus("Active");
-                                    Objects.requireNonNull(userDatabase.userDao()).updatePaymentStatus("Active");
-                                }
-                            });
                         Intent i = new Intent(RegistrationPaymentActivity.this, SignInActivity.class);
                         startActivity(i);
+                        new Thread(() -> {
+                            userDatabase.userDao().updatePaymentStatus(1);
+                        }).start();
                         finish();
                     } else {
                         Timber.e("Response %s", response.errorBody().string());
